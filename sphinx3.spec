@@ -2,7 +2,7 @@ Name: sphinx3
 Version: 0.8
 Release: %mkrel 0
 Summary: CMU Sphinx Recognition System
-Summary(ru_RU.UTF-8): Утилита для распознавания речи
+Summary(ru_RU.UTF-8): Система распознавания речи
 Group: Sound
 License: BSD-style (see COPYING)
 Url: http://cmusphinx.sourceforge.net/
@@ -11,7 +11,7 @@ BuildRoot: %{_tmppath}/%{name}-%{version}
 Source: %{name}-%{version}.tar.gz
 
 Requires: sphinxbase
-BuildRequires: sphinxbase-devel
+BuildRequires: sphinxbase sphinxbase-devel
 
 Source1: Makefile.patch
 Source2: Makefile.inc.patch
