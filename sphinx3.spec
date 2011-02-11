@@ -8,10 +8,10 @@ License: BSD-style (see COPYING)
 Url: http://cmusphinx.sourceforge.net/
 BuildRoot: %{_tmppath}/%{name}-%{version}
 
-Source: %name-%version.tar.gz
+Source: %{name}-%{version}.tar.gz
 
 Requires: sphinxbase
-BuildRequires: sphinxbase
+BuildRequires: sphinxbase-devel
 
 Source1: Makefile.patch
 Source2: Makefile.inc.patch
@@ -24,18 +24,16 @@ Source4: Makefile2.patch
 %description
 The CMU Sphinx Recognition System is a library and a set
 of examples and utilities for speech recognition.
-
 This package will install the sphinx3 library and some examples.
 
 %package devel
 Summary:        libraries and header files for Sphinx
 Group:          Development/C
-Requires:       %name = %version-%release
+Requires:       %{name} = %{version}-%{release}
 
 %description devel
 The CMU Sphinx Recognition System is a library and a set
 of examples and utilities for speech recognition.
-
 This package contains libraries and header files need for development.
 
 %prep
@@ -58,7 +56,7 @@ patch -p0 -F 90 model/lm/an4/Makefile %{SOURCE4}
 %make
 
 %install
-make install DESTDIR=%buildroot
+make install DESTDIR=%{buildroot}
 
 %clean
 rm -fr %{buildroot}
@@ -73,14 +71,14 @@ ldconfig
 %defattr(-,root,root)
 %doc AUTHORS COPYING INSTALL README NEWS doc/*.ppt
 %doc doc/*.html doc/*.pdf doc/*.txt doc/*.gif
-%_bindir/*
-%_datadir/%name
-%_libdir/*.so.*
-%_libdir/*.so
+%{_bindir}/*
+%{_datadir}/%{name}
+%{_libdir}/*.so.*
+%{_libdir}/*.so
 
 %files devel
 %defattr(-,root,root)
-%_libdir/*.a
-%_libdir/*.la
-%_includedir/%name/
-%_libdir/pkgconfig/%name.pc
+%{_libdir}/*.a
+%{_libdir}/*.la
+%{_includedir}/%{name}/
+%{_libdir}/pkgconfig/%{name}.pc
