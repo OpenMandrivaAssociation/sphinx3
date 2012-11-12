@@ -1,0 +1,6 @@
+sources:
+  "Makefile2.patch:"	eb6604d8fad080094d00dfdcda2c7aa0fba45621
+  "Makefile.an4.patch:"	b7f6b53b6f64a7a47baafc794a34426e06533877
+  "Makefile.inc.patch:"	b8a2d4eb6d151e3799da00d4124a400bdd1e6588
+  "Makefile.patch:"	6e5b70186ddb5cf17ed5ac7ecfc5e2ec691d4c1b
+  "sphinx3-0.8.tar.gz:"	490ee45ae23ee6ed587d7147f2008df8a53db695
