@@ -2,11 +2,10 @@ Name: sphinx3
 Version: 0.8
 Release: %mkrel 2
 Summary: CMU Sphinx Recognition System
-Summary(ru_RU.UTF-8): Система распознавания речи
+#Summary(ru_RU.UTF-8): Система распознавания речи
 Group: Sound
 License: BSD-style (see COPYING)
 Url: http://cmusphinx.sourceforge.net/
-BuildRoot: %{_tmppath}/%{name}-%{version}
 
 Source: %{name}-%{version}.tar.gz
 
@@ -58,17 +57,7 @@ patch -p0 -F 90 model/lm/an4/Makefile %{SOURCE4}
 %install
 make install DESTDIR=%{buildroot}
 
-%clean
-rm -fr %{buildroot}
-
-%post
-ldconfig
-
-%postun
-ldconfig
-
 %files
-%defattr(-,root,root)
 %doc AUTHORS COPYING INSTALL README NEWS doc/*.ppt
 %doc doc/*.html doc/*.pdf doc/*.txt doc/*.gif
 %{_bindir}/*
@@ -77,8 +66,24 @@ ldconfig
 %{_libdir}/*.so
 
 %files devel
-%defattr(-,root,root)
 %{_libdir}/*.a
-%{_libdir}/*.la
 %{_includedir}/%{name}/
 %{_libdir}/pkgconfig/%{name}.pc
+
+
+%changelog
+* Wed Apr 20 2011 zamir <zamir@mandriva.org> 0.8-2mdv2011.0
++ Revision: 656226
+- new sphinxbase
+
+* Thu Mar 17 2011 Oden Eriksson <oeriksson@mandriva.com> 0.8-1
++ Revision: 645881
+- relink against libmysqlclient.so.18
+
+* Fri Feb 11 2011 zamir <zamir@mandriva.org> 0.8-0
++ Revision: 637304
+- fixed Build Requires
+- fix build requires
+- first build
+- create sphinx3
+

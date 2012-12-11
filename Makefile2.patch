@@ -1,0 +1,5 @@
+--- ./Makefile	2010-04-28 14:56:26.443513028 +0400
++++ ./Makefile.new	2010-04-28 15:05:01.779512269 +0400
+@@ -101 +101 @@
+-INSTALL = /usr/bin/install -c
++INSTALL = /usr/bin/install -C

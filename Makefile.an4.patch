@@ -1,0 +1,5 @@
+--- ./Makefile	2010-04-28 14:42:36.920512135 +0400
++++ ./Makefile	2010-04-28 14:48:37.089512119 +0400
+@@ -254 +254 @@
+-	test -z "$(lmdir)" || $(MKDIR_P) "$(DESTDIR)$(lmdir)"
++	test -z "$(DESTDIR)$(lmdir)" || $(MKDIR_P) "$(DESTDIR)$(lmdir)"
