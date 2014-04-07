@@ -1,6 +1,6 @@
-Name: sphinx3
+Name:    sphinx3
 Version: 0.8
-Release: %mkrel 2
+Release: 3
 Summary: CMU Sphinx Recognition System
 #Summary(ru_RU.UTF-8): Система распознавания речи
 Group: Sound
@@ -17,7 +17,7 @@ Source2: Makefile.inc.patch
 Source3: Makefile.an4.patch
 Source4: Makefile2.patch
 
-%define Werror_cflags %nil
+%define Werror_cflags %{nil}
 %define _disable_ld_no_undefined 1
 
 %description
@@ -46,8 +46,9 @@ patch -p0 -F 90 model/lm/an4/Makefile.in %{SOURCE3}
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
-%{__automake}
+%{__automake} --add-missing
 # ./autogen.sh
+cp configure.ac configure.in
 %configure
 patch -p0 -F 90 Makefile %{SOURCE4}
 patch -p0 -F 90 include/Makefile %{SOURCE4}
@@ -69,21 +70,3 @@ make install DESTDIR=%{buildroot}
 %{_libdir}/*.a
 %{_includedir}/%{name}/
 %{_libdir}/pkgconfig/%{name}.pc
-
-
-%changelog
-* Wed Apr 20 2011 zamir <zamir@mandriva.org> 0.8-2mdv2011.0
-+ Revision: 656226
-- new sphinxbase
-
-* Thu Mar 17 2011 Oden Eriksson <oeriksson@mandriva.com> 0.8-1
-+ Revision: 645881
-- relink against libmysqlclient.so.18
-
-* Fri Feb 11 2011 zamir <zamir@mandriva.org> 0.8-0
-+ Revision: 637304
-- fixed Build Requires
-- fix build requires
-- first build
-- create sphinx3
-
