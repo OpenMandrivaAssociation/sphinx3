@@ -1,6 +1,6 @@
 Name:    sphinx3
 Version: 0.8
-Release: 3
+Release: 4
 Summary: CMU Sphinx Recognition System
 #Summary(ru_RU.UTF-8): Система распознавания речи
 Group: Sound
