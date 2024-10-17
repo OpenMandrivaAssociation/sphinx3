@@ -5,7 +5,7 @@ Summary: CMU Sphinx Recognition System
 #Summary(ru_RU.UTF-8): Система распознавания речи
 Group: Sound
 License: BSD-style (see COPYING)
-Url: http://cmusphinx.sourceforge.net/
+Url: https://cmusphinx.sourceforge.net/
 
 Source: %{name}-%{version}.tar.gz
 
